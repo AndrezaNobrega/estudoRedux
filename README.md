@@ -1,70 +1,37 @@
-# Getting Started with Create React App
+# Diretório de estudo inicial do Redux: 
+##### Gerenciamento de estados no React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+```
+Para rodar o projeto: npm start
 
-## Available Scripts
+```
 
-In the project directory, you can run:
+Num projeto, possuímos uma árvore de componentes. Sem o uso do Redux, os estados são acessados por meio da comunicação direta/indireta. Com o Redux, tem-se a possibilidade desses estados serem acessados diretamente. 
+Não temos um estado dentro do componente, mas sim externamente.
+O componente pode modificar esse estado e os componentes que utilizam podem acessar.
 
-### `npm start`
+> Faz sentido usar o estado de maneira isolada, no entando, caso ele só dependa daquele componente.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Nós temos o seguinte fluxo com o Redux:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Minha Ação --> Action Creator --> Action [type, payload] --> Dispatch[lista de reducers]
 
-### `npm test`
+Temos então que:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Action creator: é uma função;
+retorna uma action;
+é síncrona - não podemos retornar uma promise;
 
-### `npm run build`
+action: é um objeto;
+possui um atrib type (é obrigatório)
+também pode ter dados;
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+reducers:
+são funções puras - geramos novas versoes. por exemplo: recebemos um objeto, ele não será alterado, mas geramos um clone ‘atualizado’
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+estado: é um objeto chave-valor, podemos ter diversos atributos
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+como o estado é gerado: a partir dos reducers 
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
