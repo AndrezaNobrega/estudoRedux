@@ -1,9 +1,11 @@
 import React from 'react'
 import Card from './Card'
 
-export default props => {
-    const max = props.max
-    const min = props.min
+import { connect } from 'react-redux'
+
+const Sorteio = props => {
+    const {min, max} = props
+
     return (
         <Card title = "Sorteio de um número" purple>
             <div>
@@ -15,3 +17,14 @@ export default props => {
         </Card>
     )
 }
+
+//mapear o estado para dentro das propriedades do componente
+function mapStateToProps(state){
+    return{
+        min: state.numeros.min,
+        max: state.numeros.max,
+    }
+
+}
+
+export default connect(mapStateToProps)(Sorteio)

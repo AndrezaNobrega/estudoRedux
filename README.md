@@ -18,20 +18,22 @@ Minha Ação --> Action Creator --> Action [type, payload] --> Dispatch[lista de
 
 Temos então que:
 
-Action creator: é uma função;
+- Action creator: é uma função;
 retorna uma action;
 é síncrona - não podemos retornar uma promise;
 
-action: é um objeto;
+- action: é um objeto;
 possui um atrib type (é obrigatório)
 também pode ter dados;
 
-reducers:
-são funções puras - geramos novas versoes. por exemplo: recebemos um objeto, ele não será alterado, mas geramos um clone ‘atualizado’
+- reducers:
+são funções puras - geramos novas versoes. por exemplo: recebemos um objeto, ele não será alterado, mas geramos um clone ‘atualizado’. Cada um tem o seu arquivo na pasta 'reducers'
 
-estado: é um objeto chave-valor, podemos ter diversos atributos
+- estado: é um objeto chave-valor, podemos ter diversos atributos
 
 como o estado é gerado: a partir dos reducers 
+
+- Provider: ele envolve o app e conecta o redux com o React.
 
 
 
