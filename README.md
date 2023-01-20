@@ -1,4 +1,4 @@
-# Diretório de estudo inicial do Redux: Gerenciamento de estados no React
+# Repositório de estudo inicial do Redux: Gerenciamento de estados no React
 
 ```
 Para rodar o projeto: npm start
